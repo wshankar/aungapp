@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Carbon\Cli\Invoker;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +37,34 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function records()
+    {
+        return $this->hasMany(DailyRecord::class);
+    }
+
+    public function investigations()
+    {
+        return $this->hasMany(Investigation::class);
+    }
+
+    public function medications()
+    {
+        return $this->hasMany(Medication::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function feedbacks()
+    {
+        return $this->hasMany(UserFeedback::class);
+    }
+
+    public function promises()
+    {
+        return $this->hasMany(UserPromise::class);
+    }
 }

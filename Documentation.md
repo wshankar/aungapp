@@ -25,5 +25,5 @@
 	#MedComment
 	php artisan make:model Model/Admin/MedComment -mr
 	
-
+## Define relationship between models
 
