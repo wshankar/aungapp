@@ -15,6 +15,7 @@ class CreateMedicationsTable extends Migration
     {
         Schema::create('medications', function (Blueprint $table) {
             $table->id();
+            $table->string('med_date')->nullable();
             $table->string('noMed')->nullable();
             $table->string('med1')->nullable();
             $table->string('med2')->nullable();

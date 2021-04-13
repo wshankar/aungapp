@@ -27,3 +27,4 @@
 	
 ## Define relationship between models
 
+## Seeding database with fake data
