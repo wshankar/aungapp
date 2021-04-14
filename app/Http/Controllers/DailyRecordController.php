@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DailyRecordResource;
 use App\Model\DailyRecord;
 use Illuminate\Http\Request;
 
@@ -14,17 +15,7 @@ class DailyRecordController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return DailyRecordResource::collection(DailyRecord::all());
     }
 
     /**
@@ -35,7 +26,8 @@ class DailyRecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DailyRecord::create($request->all());
+        return response('Created');
     }
 
     /**
@@ -46,19 +38,9 @@ class DailyRecordController extends Controller
      */
     public function show(DailyRecord $dailyRecord)
     {
-        //
+        return $dailyRecord;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\DailyRecord  $dailyRecord
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(DailyRecord $dailyRecord)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +51,8 @@ class DailyRecordController extends Controller
      */
     public function update(Request $request, DailyRecord $dailyRecord)
     {
-        //
+        $dailyRecord->update($request->all());
+        return response('Updated');
     }
 
     /**
@@ -80,6 +63,7 @@ class DailyRecordController extends Controller
      */
     public function destroy(DailyRecord $dailyRecord)
     {
-        //
+        $dailyRecord->delete();
+        return response(['msg' => 'Deleted'], 200);
     }
 }

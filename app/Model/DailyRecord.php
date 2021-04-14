@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DailyRecord extends Model
 {
-    protected $guard = [];
+    protected $fillable = ['user_id', 'fbs'];
     
     public function user()
     {

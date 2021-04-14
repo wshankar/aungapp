@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserPromise::class);
     }
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

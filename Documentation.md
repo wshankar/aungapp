@@ -28,3 +28,5 @@
 ## Define relationship between models
 
 ## Seeding database with fake data
+
+## Defining routes and Controller function

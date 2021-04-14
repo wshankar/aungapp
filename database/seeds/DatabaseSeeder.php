@@ -7,6 +7,7 @@ use App\Model\DailyRecord;
 use App\Model\Investigation;
 use App\Model\Medication;
 use App\Model\Profile;
+use App\Model\Subscription;
 use App\Model\User;
 use App\Model\UserFeedback;
 use App\Model\UserPromise;
@@ -36,5 +37,6 @@ class DatabaseSeeder extends Seeder
         });
         factory(UserFeedback::class, 10)->create();
         factory(UserPromise::class, 10)->create();
+        factory(Subscription::class, 10)->create();
     }
 }

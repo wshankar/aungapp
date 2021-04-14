@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\InvResource;
 use App\Model\Investigation;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class InvestigationController extends Controller
      */
     public function index()
     {
-        //
+        return InvResource::collection(Investigation::all());
     }
 
     /**
